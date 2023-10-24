@@ -1,0 +1,420 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+  --color-brand-1: hsl(220, 13%, 13%);
+  --color-brand-2: hsl(219, 9%, 45%);
+  --color-brand-3: hsl(26, 100%, 55%);
+  --color-brand-4: hsl(220, 14%, 75%);
+  --color-brand-5: hsl(0, 0%, 100%);
+
+  --color-site-1: hsla(0, 0%, 0%, 0.75);
+  --color-site-2: hsl(223, 64%, 98%);
+  --color-site-3: hsl(25, 100%, 94%);
+
+  --font-kumbh-sans: "Kumbh Sans", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-kumbh-sans);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.ImgBox {
+  width: 100%;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.ImgBox-PrevBtnBox,
+.ImgBox-NextBtnBox {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--color-brand-5);
+  padding: 0.8rem;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.ImgBox-PrevBtnBox {
+  left: 2rem;
+}
+
+.ImgBox-NextBtnBox {
+  right: 2rem;
+}
+
+.ImgBox-PrevBtnBox > img,
+.ImgBox-NextBtnBox > img {
+  width: 1.5rem;
+}
+
+.ImgBox-Slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  position: relative;
+  height: 35rem;
+  width: 100%;
+}
+
+.ImgBox-Slider > img {
+  display: block;
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+}
+
+.show {
+  opacity: 1 !important;
+}
+
+.desktop {
+  display: none;
+}
+
+.TxtBox {
+  padding: 2rem;
+}
+
+.TxtBox-CompanyName {
+  font-size: 1.6rem;
+  color: var(--color-brand-3);
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.TxtBox-Title {
+  font-size: 3rem;
+  text-transform: capitalize;
+  color: var(--color-brand-1);
+  margin-bottom: 2rem;
+}
+
+.TxtBox-Para {
+  font-size: 1.6rem;
+  color: var(--color-brand-2);
+  margin-bottom: 3rem;
+}
+
+.TxtBox-PriceBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.TxtBox-PriceBox-Box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.TxtBox-PriceBox-Box-Price {
+  display: block;
+  font-size: 3rem;
+  color: var(--color-brand-1);
+}
+
+.TxtBox-PriceBox-Box-Discount {
+  display: block;
+  background-color: var(--color-site-3);
+  padding: 0.25rem 0.5rem;
+  font-size: 1.6rem;
+  border-radius: 0.25rem;
+  color: var(--color-brand-3);
+  font-weight: bold;
+}
+
+.TxtBox-PriceBox-FullPrice {
+  display: block;
+  color: var(--color-brand-4);
+  font-size: 1.6rem;
+  text-decoration: line-through;
+}
+
+.TxtBox-CartBox-Btns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background-color: var(--color-site-2);
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+.TxtBox-CartBox-Btns > button {
+  display: block;
+  color: var(--color-brand-1);
+  font-size: 1.8rem;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.TxtBox-CartBox-Btns > button > img {
+  width: 1.4rem;
+}
+
+.TxtBox-CartBox-MinusBtn {
+  margin-right: auto;
+}
+
+.TxtBox-CartBox-PlusBtn {
+  margin-left: auto;
+}
+
+.CartBtn {
+  display: block;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--color-brand-3);
+  color: var(--color-brand-5);
+  font-size: 1.6rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.CartBtn:hover {
+  opacity: 0.7;
+}
+
+.CartBtn > img {
+  width: 2rem;
+  margin-right: 0.8rem;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(110deg)
+    brightness(154%) contrast(102%);
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    position: relative;
+  }
+  .FirstWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding: 2rem 5rem;
+    position: relative;
+  }
+
+  .FirstWrapper.blur {
+    pointer-events: none;
+    filter: blur(1px);
+  }
+
+  .FirstWrapper.blur::after {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--color-site-1);
+    opacity: 0.1;
+  }
+
+  .ImgBox {
+    margin-bottom: 0;
+    display: grid;
+    place-content: center;
+  }
+
+  .ImgBox-Slider {
+    height: 42rem;
+    width: 40rem;
+  }
+
+  .ImgBox-Slider > img {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 2rem;
+    cursor: pointer;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
+
+  .ThumnailBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .ThumnailBox > img {
+    display: block;
+    width: 8rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .ThumnailBox > img:hover {
+    opacity: 0.7;
+  }
+
+  .thumb {
+    border: 2px solid var(--color-brand-3);
+    opacity: 0.7;
+  }
+
+  .TxtBox-Title {
+    max-width: 40rem;
+    font-size: 4rem;
+  }
+
+  .TxtBox-Para {
+    max-width: 40rem;
+  }
+
+  .TxtBox-PriceBox {
+    display: block;
+  }
+
+  .TxtBox-PriceBox-Box {
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .TxtBox-CartBox {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .SecondWrapper {
+    position: absolute;
+    top: -4rem;
+    left: 54%;
+    transform: translateX(-50%);
+  }
+
+  .SecondWrapper-CloseBox {
+    display: block;
+    width: 2rem;
+    margin-left: auto;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    filter: brightness(120%);
+  }
+
+  .SecondWrapper-CloseBox:hover {
+    filter: brightness(150%) hue-rotate(500deg) sepia(12%) saturate(495%)
+      invert(12%);
+  }
+
+  .SecondWrapper-ImgBox-PrevBtn,
+  .SecondWrapper-ImgBox-NextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: grid;
+    place-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--color-brand-5);
+    padding: 0.8rem;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .SecondWrapper-ImgBox-NextBtn > img,
+  .SecondWrapper-ImgBox-PrevBtn > img {
+    width: 1.5rem;
+  }
+
+  .SecondWrapper-ImgBox-PrevBtn {
+    left: -1.5rem;
+    z-index: 10;
+  }
+
+  .SecondWrapper-ImgBox-NextBtn {
+    right: -1.5rem;
+  }
+
+  .SecondWrapper-ImgBox-Slider {
+    width: 45rem;
+    height: 45rem;
+    position: relative;
+  }
+
+  .SecondWrapper-ImgBox-Slider > img {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    opacity: 0;
+  }
+
+  .S-show {
+    opacity: 1 !important;
+  }
+
+  .SecondWrapper-ImgBox-Thumbnails {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .SecondWrapper-ImgBox-Thumbnails > img {
+    display: block;
+    width: 8rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .SecondWrapper-ImgBox-Thumbnails > img:hover {
+    filter: contrast(68%) brightness(120%);
+  }
+
+  .S-thumb {
+    border: 2px solid var(--color-brand-3);
+    filter: contrast(68%) brightness(120%);
+  }
+}

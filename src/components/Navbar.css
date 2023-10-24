@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+  --color-brand-1: hsl(220, 13%, 13%);
+  --color-brand-2: hsl(219, 9%, 45%);
+  --color-brand-3: hsl(26, 100%, 55%);
+  --color-brand-4: hsl(220, 14%, 75%);
+  --color-brand-5: hsl(0, 0%, 100%);
+
+  --color-site-1: hsla(0, 0%, 0%, 0.75);
+  --color-site-2: hsl(223, 64%, 98%);
+  --color-site-3: hsl(25, 100%, 94%);
+
+  --font-kumbh-sans: "Kumbh Sans", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-kumbh-sans);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 2rem;
+}
+
+.FirstContainer,
+.SecondContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+}
+
+.FirstContainer-Menu {
+  position: relative;
+  width: 2.5rem;
+}
+
+.FirstContainer-Menu > button {
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  z-index: 1;
+}
+
+.FirstContainer-Menu > button > img {
+  width: 100%;
+}
+
+.FirstContainer-Logo {
+  display: block;
+  width: 12rem;
+}
+
+.FirstContainer-Logo > img {
+  width: 100%;
+}
+
+.FirstContainer-NavLinks {
+  display: none;
+  list-style: none;
+}
+
+.FirstContainer-NavLinks.open {
+  display: block;
+  position: absolute;
+  top: -3.5rem;
+  left: -2rem;
+  width: 50vw;
+  height: 100vh;
+  padding: 10rem 2rem 3rem;
+  background-color: var(--color-brand-5);
+}
+
+.FirstContainer-NavLinks-Link {
+  margin-bottom: 1.5rem;
+}
+
+.FirstContainer-NavLinks-Link > a {
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  color: var(--color-brand-1);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.SecondContainer {
+  position: relative;
+}
+
+.SecondContainer-CartBtn {
+  display: block;
+  width: 2.5rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.SecondContainer-CartBtn > img {
+  width: 100%;
+}
+
+.SecondContainer-CartBtn-PopUp {
+  position: absolute;
+  display: block;
+  top: -2rem;
+  right: -1rem;
+  background-color: var(--color-brand-3);
+  color: var(--color-brand-5);
+  padding: 0.25rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 1rem;
+}
+
+.CartBox {
+  position: absolute;
+  top: 6.5rem;
+  right: -1rem;
+  width: 95vw;
+  height: 30rem;
+  background-color: var(--color-brand-5);
+  border-radius: 1rem;
+  z-index: 100;
+  box-shadow: 2px 2px 8px var(--color-brand-2);
+}
+
+.CartBox-Title {
+  font-size: 2.5rem;
+  color: var(--color-brand-1);
+  padding: 2rem;
+  border-bottom: 2px solid var(--color-brand-4);
+}
+
+.CartBox-Cart {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.CartBox-Cart-Para {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6rem;
+  color: var(--color-brand-2);
+  font-weight: bold;
+}
+
+.CartBox-Cart-ItemsList {
+  padding: 2rem;
+  list-style: none;
+}
+
+.CartBox-Cart-ItemsList-ItemBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.CartBox-Cart-ItemsList-ItemBox-Container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.CartBox-Cart-ItemsList-ItemBox-Container > img {
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 0.5rem;
+}
+
+.CartBox-Cart-ItemsList-ItemBox-Container-Title {
+  color: var(--color-brand-2);
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.CartBox-Cart-ItemsList-ItemBox-Container-Price {
+  display: inline-block;
+  color: var(--color-brand-2);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.countItem {
+  font-size: 1.5rem;
+  color: var(--color-brand-2);
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.FullPrice {
+  font-size: 1.5rem;
+  color: var(--color-brand-1);
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.CartBox-Cart-ItemsList-ItemBox-TrashIconBox {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.CartBox-Cart-ItemsList-ItemBox-TrashIconBox > img {
+  width: 100%;
+}
+
+.CartBox-Cart-ItemsList-Btn {
+  background-color: var(--color-brand-3);
+  padding: 1.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: var(--color-brand-5);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.CartBox-Cart-ItemsList-Btn:hover {
+  opacity: 0.7;
+}
+
+.SecondContainer-UserBtn {
+  display: block;
+  width: 3.5rem;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  border-radius: 50%;
+}
+
+.SecondContainer-UserBtn > img {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .Nav-Blur::after {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--color-site-1);
+  }
+
+  .FirstContainer-Menu {
+    display: none;
+  }
+
+  .FirstContainer-Logo {
+    width: 14rem;
+  }
+
+  .FirstContainer-NavLinks,
+  .FirstContainer-NavLinks.open {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    gap: 2rem;
+    height: auto;
+    width: auto;
+    padding: 0;
+    top: auto;
+    left: auto;
+    right: auto;
+  }
+
+  .FirstContainer-NavLinks-Link {
+    margin-bottom: 0;
+  }
+
+  .CartBox {
+    width: 40rem;
+  }
+}
